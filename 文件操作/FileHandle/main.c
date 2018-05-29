@@ -12,6 +12,16 @@ int main()
 
 
 	SearchDir(pattern, p, &file_num);
+	int i;
+	for (i = 0; i < file_num; i++)
+	{
+		char name[50] = ".\\out\\";
+		char *file_name = malloc(file_result[i][0]);
+		memcpy(file_name, &file_result[i][1], file_result[i][0]);
+		strcat(name, file_name); 
+		free(file_name);
+		remove(name); //删除./out/目录下所有txt文件
+	}
 
 	return 0; 
 }

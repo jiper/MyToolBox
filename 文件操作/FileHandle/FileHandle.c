@@ -20,7 +20,7 @@ static int calc_file_len(char *instr) //辅助函数，用以计算文件名的长度
 		index++;
 		len++;
 	}
-	return len;
+	return len+1;
 }
 void SearchDir(const char* search_cond, char(*file_name)[MAX_FILE_NAME_LEN], int *len)
 {
