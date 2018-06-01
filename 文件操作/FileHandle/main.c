@@ -16,10 +16,7 @@ int main()
 	for (i = 0; i < file_num; i++)
 	{
 		char name[50] = ".\\out\\";
-		char *file_name = malloc(file_result[i][0]);
-		memcpy(file_name, &file_result[i][1], file_result[i][0]);
-		strcat(name, file_name); 
-		free(file_name);
+		strcat(name, file_result[i]); //获取完整文件名
 		remove(name); //删除./out/目录下所有txt文件
 	}
 

@@ -40,8 +40,7 @@ void SearchDir(const char* search_cond, char(*file_name)[MAX_FILE_NAME_LEN], int
 		else
 		{
 			*len += 1;
-			memcpy(file_name[0] + 1, &data.name, MAX_FILE_NAME_LEN); //文件名拷贝
-			*file_name[0] = calc_file_len(data.name); //文件长度检测与写入
+			memcpy(file_name, &data.name, MAX_FILE_NAME_LEN); //文件名拷贝
 			file_name++;
 		}
 		nRet = _findnext(hnd, &data);
